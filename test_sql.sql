@@ -1,1 +1,1 @@
-SELECT MAX(user.name) AS name, MAX(reward.user_id) AS user_id, SUM(reward.reward) AS reward FROM user JOIN reward ON user.code=reward.user_id GROUP BY user.name
+SELECT MAX(user.name) AS name, MAX(reward.user_id) AS user_id, SUM(reward.reward) AS reward FROM user JOIN reward ON user.code=reward.user_id WHERE reward.created > '2019-01-01' GROUP BY user.name ORDER BY SUM(reward.reward) DESC
