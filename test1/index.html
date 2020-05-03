@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>api_test</title>
+  <script>
+    var request = new XMLHttpRequest();
+
+    request.open('GET', 'https://api.lancers.jp/v1/example/users/me', true);
+    request.responseType = 'json';
+
+    request.onload = function () {
+      var data = this.response;
+      console.log(data);
+    };
+
+    request.send();
+  </script>
   </head>
   <body>
-    <button id="btn">検索</button><br>
-    <script src="jquery.min.js"></script>
-    <script src="script.js"></script>
   </body>
 </html>
